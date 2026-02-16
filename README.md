@@ -1,8 +1,11 @@
 # microgpt.jl
 
-This repo contains Julia translations of Andrej Karpathy's microgpt, which implements the core ideas of the modern LLMs into only 200 lines of pure Python codes (no dependency to external libraries such as Numpy, PyTorch, and so on). 
+This repo contains Julia translations of Andrej Karpathy's [microgpt](https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95), which implements the core ideas of the modern LLMs into only 200 lines of pure Python codes (no dependency to external libraries such as Numpy, PyTorch, and so on). 
+
 The current naive Julia translation made with the help of Claude Code (Opus 4.6 with scarce prompt) is about 250 lines, of which the expansion is caused not just by the `end` keyword at each end of the blocks (for, if, and function sentences), but that some functionalities (such as random sampling) is not included in a standard library for Julia. 
+
 The Julia version is clean, and intuitivesly seems to run x10-x20 times faster which being direct translation of the original Python code, which enables the users' experimentations. 
+
 Actually, I included the English (alphabet) and Japanese (katakana) versions of Pokémon names (though around only 1,000, which is small compared to the names in the original data) as the data, which seems to work well. Checking how I loaded the other datasets, the users can easily see how to make microgpt be used for various kinds of data. 
 
 # The codes
