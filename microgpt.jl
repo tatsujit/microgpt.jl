@@ -8,14 +8,14 @@ using Printf
 Random.seed!(42)
 
 # Let there be an input dataset `docs`: Vector{String} of documents (e.g. a dataset of names)
-if !isfile("input.txt")
+if !isfile("data/input.txt")
     import Downloads
     Downloads.download(
         "https://raw.githubusercontent.com/karpathy/makemore/refs/heads/master/names.txt",
-        "input.txt",
+        "data/input.txt",
     )
 end
-docs = [strip(l) for l in split(strip(read("input.txt", String)), '\n') if !isempty(strip(l))]
+docs = [strip(l) for l in split(strip(read("data/input.txt", String)), '\n') if !isempty(strip(l))]
 Random.shuffle!(docs)
 println("num docs: $(length(docs))")
 

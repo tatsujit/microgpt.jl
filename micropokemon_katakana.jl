@@ -8,20 +8,20 @@ using Printf
 Random.seed!(42)
 
 # Let there be an input dataset: カタカナポケモン名
-if !isfile("pokemon_names_ja.txt")
+if !isfile("data/pokemon_names_ja.txt")
     import Downloads
     buf = IOBuffer()
     Downloads.download("https://raw.githubusercontent.com/sindresorhus/pokemon/main/data/ja.json", buf)
     json_str = String(take!(buf))
     # JSON is a simple array of strings: ["フシギダネ","フシギソウ",...]
     names = [m.captures[1] for m in eachmatch(r"\"([^\"]+)\"", json_str)]
-    open("pokemon_names_ja.txt", "w") do f
+    open("data/pokemon_names_ja.txt", "w") do f
         for name in names
             println(f, name)
         end
     end
 end
-docs = [strip(l) for l in split(strip(read("pokemon_names_ja.txt", String)), '\n') if !isempty(strip(l))]
+docs = [strip(l) for l in split(strip(read("data/pokemon_names_ja.txt", String)), '\n') if !isempty(strip(l))]
 Random.shuffle!(docs)
 println("num pokemon: $(length(docs))")
 

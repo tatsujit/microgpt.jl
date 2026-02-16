@@ -8,19 +8,19 @@ using Printf
 Random.seed!(42)
 
 # Let there be an input dataset: Pokemon names from PokeAPI
-if !isfile("pokemon_names.txt")
+if !isfile("data/pokemon_names.txt")
     import Downloads
     buf = IOBuffer()
     Downloads.download("https://pokeapi.co/api/v2/pokemon?limit=1025", buf)
     json_str = String(take!(buf))
     names = [m.captures[1] for m in eachmatch(r"\"name\":\"([^\"]+)\"", json_str)]
-    open("pokemon_names.txt", "w") do f
+    open("data/pokemon_names.txt", "w") do f
         for name in names
             println(f, name)
         end
     end
 end
-docs = [strip(l) for l in split(strip(read("pokemon_names.txt", String)), '\n') if !isempty(strip(l))]
+docs = [strip(l) for l in split(strip(read("data/pokemon_names.txt", String)), '\n') if !isempty(strip(l))]
 Random.shuffle!(docs)
 println("num pokemon: $(length(docs))")
 

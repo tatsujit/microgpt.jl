@@ -10,21 +10,21 @@ Actually, I included the English (alphabet) and Japanese (katakana) versions of 
 ## The main codes
 
 - `microgpt.py` is the original pure Python, 200-lines version and it's beautiful. Included in this repo for reference. 
-   - `input.txt` is the list of names (probably European female names, supposed to be?), a bit more than 32,000.
+   - `data/input.txt` is the list of names (probably European female names, supposed to be?), a bit more than 32,000.
 - `microgpt.jl` is its Julia translation. It is almost a mere direct translation, but it runs pretty much faster (no formal measurement, but it seems to me that it's x20 faster in the current version where all the real computations are contained in a function; it's 10x faster if it's just a script (not in a function and be run)). 
-   - This uses the same `input.txt`.
+   - This uses the same `data/input.txt`.
 
 ## Pokémon codes
 
 I have no knowledge of Pokémon, I only know Pikachu. Still, for my students most of who are familiar with the Pokémon names and can see the predictive or autocompletion functionality of microgpt, I made two version that deal with Pokémon names: 
 - `micropokemon.jl` deals with English (alphabet) Pokémon names
-   - `pokemon_names_.txt` is the dataset
+   - `data/pokemon_names_.txt` is the dataset
 - `micropokemon_katakana.jl` deals with Japanese (katakana) Pokémon names
-   - `pokemon_names_ja.txt` is the Japanese dataset
+   - `data/pokemon_names_ja.txt` is the Japanese dataset
 
 # Other files
-- `microgpt_memo.ipynb` is a Jupyter notebook written in Japanese to take notes while understanding the original and Julia codes. 
-- `efficienty.ipynb` is a bit of research (by Claude Code) on how to make the Julia version more efficient. 
+- `notebook/microgpt_memo.ipynb` is a Jupyter notebook written in Japanese to take notes while understanding the original and Julia codes. 
+- `notebook/efficienty.ipynb` is a bit of research (by Claude Code) on how to make the Julia version more efficient. 
 
 
 # Other things (that are not relevant yet, maybe later when we sweep parameters of the model)

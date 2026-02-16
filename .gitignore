@@ -3,11 +3,18 @@
 ################################################################################
 
 # Folders to ignore - files may be too large, too many, etc. NOTE: EDIT IF NEEDED.
-/data
+# /data
+/data/exp_pro
+/data/exp_raw
+/data/sims
 /videos
 /plots
-/notebooks
+# /notebooks
 /_research
+/scripts
+/src
+/papers
+/test
 
 ################################################################################
 #                                    Julia                                     #

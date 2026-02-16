@@ -12,11 +12,11 @@ import random   # random.seed, random.choices, random.gauss, random.shuffle
 random.seed(42) # Let there be order among chaos
 
 # Let there be an input dataset `docs`: list[str] of documents (e.g. a dataset of names)
-if not os.path.exists('input.txt'):
+if not os.path.exists('data/input.txt'):
     import urllib.request
     names_url = 'https://raw.githubusercontent.com/karpathy/makemore/refs/heads/master/names.txt'
-    urllib.request.urlretrieve(names_url, 'input.txt')
-docs = [l.strip() for l in open('input.txt').read().strip().split('\n') if l.strip()] # list[str] of documents
+    urllib.request.urlretrieve(names_url, 'data/input.txt')
+docs = [l.strip() for l in open('data/input.txt').read().strip().split('\n') if l.strip()] # list[str] of documents
 random.shuffle(docs)
 print(f"num docs: {len(docs)}")
 
